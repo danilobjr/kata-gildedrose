@@ -45,9 +45,13 @@
   <ItemGroup>
     <Compile Include="Item.cs" />
     <Compile Include="ItemWrapper.cs" />
+    <Compile Include="IUpdateQualityStrategy.cs" />
     <Compile Include="QualityService.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UpdateQualityAgedBrie.cs" />
+    <Compile Include="UpdateQualityAnyItem.cs" />
+    <Compile Include="UpdateQualityBackstage.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
