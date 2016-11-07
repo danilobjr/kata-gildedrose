@@ -7,29 +7,29 @@ using System.Threading.Tasks;
 
 namespace Tests.Builders
 {
-    internal class GildedRoseBuilder
+    internal class QualityServiceBuilder
     {
         private IList<Item> items;
 
-        public GildedRoseBuilder()
+        public QualityServiceBuilder()
         {
             this.items = new List<Item>();
         }
 
-        internal static GildedRoseBuilder AnGildedRose()
+        internal static QualityServiceBuilder AnQualityService()
         {
-            return new GildedRoseBuilder();
+            return new QualityServiceBuilder();
         }
 
-        internal GildedRoseBuilder AddItem(Item item)
+        internal QualityServiceBuilder AddItem(Item item)
         {
             this.items.Add(item);
             return this;
         }
 
-        internal GildedRose Build()
+        internal QualityService Build()
         {
-            return new GildedRose(this.items);
+            return new QualityService(this.items);
         }
     }
 }

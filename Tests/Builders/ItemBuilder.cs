@@ -18,9 +18,21 @@ namespace Tests.Builders
             return new ItemBuilder();
         }
 
-        internal ItemBuilder AnyName()
+        internal ItemBuilder NamedSulfuras()
         {
-            this.name = "Any name";
+            this.name = "Sulfuras, Hand of Ragnaros";
+            return this;
+        }
+
+        internal ItemBuilder NamedAgedBrie()
+        {
+            this.name = "Aged Brie";
+            return this;
+        }
+
+        internal ItemBuilder NamedBackstage()
+        {
+            this.name = "Backstage passes to a TAFKAL80ETC concert";
             return this;
         }
 

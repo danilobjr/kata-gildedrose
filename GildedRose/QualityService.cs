@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Application
 {
-    public class GildedRose
+    public class QualityService
     {
         public IList<Item> Items;
 
-        public GildedRose(IList<Item> Items)
+        public QualityService(IList<Item> Items)
         {
             this.Items = Items;
         }
@@ -97,5 +97,14 @@ namespace Application
         public string Name { get; set; }
         public int SellIn { get; set; }
         public int Quality { get; set; }
+
+        public override bool Equals(object obj)
+        {
+            var anotherItem = obj as Item;
+
+            return this.Name == anotherItem.Name &&
+                this.Quality == anotherItem.Quality &&
+                this.SellIn == anotherItem.SellIn;
+        }
     }
 }
