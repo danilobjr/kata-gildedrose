@@ -36,6 +36,12 @@ namespace Tests.Builders
             return this;
         }
 
+        internal ItemBuilder AnyName()
+        {
+            this.name = "Any name";
+            return this;
+        }
+
         internal ItemBuilder Quality(int quality)
         {
             this.quality = quality;
