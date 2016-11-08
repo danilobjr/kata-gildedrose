@@ -8,16 +8,12 @@ namespace Application
 {
     class UpdateQualityAgedBrie : IUpdateQualityStrategy
     {
-        public void UpdateItemQuality(Item item)
+        public void UpdateItemQuality(ItemWrapper item)
         {
-            if (item.Quality < 50)
-            {
-                item.Quality++;
-            }
-
+            item.Quality++;
             item.SellIn--;
 
-            if (item.SellIn < 0 && item.Quality < 50)
+            if (item.SellIn < 0)
             {
                 item.Quality++;
             }

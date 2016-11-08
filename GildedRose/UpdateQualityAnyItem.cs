@@ -8,16 +8,12 @@ namespace Application
 {
     class UpdateQualityAnyItem : IUpdateQualityStrategy
     {
-        public void UpdateItemQuality(Item item)
+        public void UpdateItemQuality(ItemWrapper item)
         {
-            if (item.Quality > 0)
-            {
-                item.Quality--;
-            }
-
+            item.Quality--;
             item.SellIn--;
 
-            if (item.SellIn < 0 && item.Quality > 0)
+            if (item.SellIn < 0)
             {
                 item.Quality--;
             }

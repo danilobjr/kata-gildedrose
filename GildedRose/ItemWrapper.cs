@@ -32,12 +32,18 @@ namespace Application
         public int Quality
         {
             get { return this.item.Quality; }
-            set { this.item.Quality = value; }
+            set
+            {
+                if (value >= 0 && value <= 50)
+                {
+                    this.item.Quality = value;
+                }
+            }
         }
 
         public void UpdateQuality()
         {
-            this.updateQualityStrategy.UpdateItemQuality(item);
+            this.updateQualityStrategy.UpdateItemQuality(this);
         }
     }
 }

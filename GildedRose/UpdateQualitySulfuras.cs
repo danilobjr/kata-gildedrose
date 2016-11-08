@@ -8,7 +8,7 @@ namespace Application
 {
     class UpdateQualitySulfuras : IUpdateQualityStrategy
     {
-        public void UpdateItemQuality(Item item)
+        public void UpdateItemQuality(ItemWrapper item)
         {
             this.NeverHasToBeSoldOrDecreasesInQualitySoNoUpdateNeeded();
         }

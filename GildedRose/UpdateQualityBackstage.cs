@@ -8,24 +8,18 @@ namespace Application
 {
     class UpdateQualityBackstage : IUpdateQualityStrategy
     {
-        public void UpdateItemQuality(Item item)
+        public void UpdateItemQuality(ItemWrapper item)
         {
-            if (item.Quality < 50)
+            item.Quality++;
+
+            if (item.SellIn < 11)
             {
                 item.Quality++;
+            }
 
-                if (item.Quality < 50)
-                {
-                    if (item.SellIn < 11)
-                    {
-                        item.Quality++;
-                    }
-
-                    if (item.SellIn < 6)
-                    {
-                        item.Quality++;
-                    }
-                }
+            if (item.SellIn < 6)
+            {
+                item.Quality++;
             }
 
             item.SellIn--;
