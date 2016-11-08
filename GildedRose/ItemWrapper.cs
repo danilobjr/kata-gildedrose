@@ -14,27 +14,7 @@ namespace Application
         public ItemWrapper(Item item)
         {
             this.item = item;
-
-            if (item.Name == "Aged Brie")
-            {
-                this.updateQualityStrategy = new UpdateQualityAgedBrie();
-            }
-            else if (item.Name == "Backstage passes to a TAFKAL80ETC concert")
-            {
-                this.updateQualityStrategy = new UpdateQualityBackstage();
-            }
-            else if (item.Name == "Sulfuras, Hand of Ragnaros")
-            {
-                this.updateQualityStrategy = new UpdateQualitySulfuras();
-            }
-            else if (item.Name == "Conjured")
-            {
-                this.updateQualityStrategy = new UpdateQualityConjured();
-            }
-            else
-            {
-                this.updateQualityStrategy = new UpdateQualityAnyItem();
-            }
+            this.updateQualityStrategy = UpdateQualityFactory.Create(item);
         }
 
         public string Name

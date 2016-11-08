@@ -53,6 +53,7 @@
     <Compile Include="UpdateQualityAnyItem.cs" />
     <Compile Include="UpdateQualityBackstage.cs" />
     <Compile Include="UpdateQualityConjured.cs" />
+    <Compile Include="UpdateQualityFactory.cs" />
     <Compile Include="UpdateQualitySulfuras.cs" />
   </ItemGroup>
   <ItemGroup>
