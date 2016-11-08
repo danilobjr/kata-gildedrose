@@ -8,6 +8,6 @@ namespace Application
 {
     interface IUpdateQualityStrategy
     {
-        void UpdateQuality(Item item);
+        void UpdateItemQuality(Item item);
     }
 }

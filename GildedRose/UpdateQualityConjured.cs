@@ -6,20 +6,20 @@ using System.Threading.Tasks;
 
 namespace Application
 {
-    class UpdateQualityAgedBrie : IUpdateQualityStrategy
+    class UpdateQualityConjured : IUpdateQualityStrategy
     {
         public void UpdateItemQuality(Item item)
         {
-            if (item.Quality < 50)
+            if (item.Quality > 0)
             {
-                item.Quality++;
+                item.Quality = item.Quality - 2;
             }
 
             item.SellIn--;
 
-            if (item.SellIn < 0 && item.Quality < 50)
+            if (item.SellIn < 0 && item.Quality > 0)
             {
-                item.Quality++;
+                item.Quality = item.Quality - 2;
             }
         }
     }

@@ -13,6 +13,7 @@ namespace Tests
         private readonly ItemBuilder SULFURAS_ITEM = ItemBuilder.AnItem().NamedSulfuras();
         private readonly ItemBuilder AGED_BRIE_ITEM = ItemBuilder.AnItem().NamedAgedBrie();
         private readonly ItemBuilder BACKSTAGE_ITEM = ItemBuilder.AnItem().NamedBackstage();
+        private readonly ItemBuilder CONJURED_ITEM = ItemBuilder.AnItem().NamedConjured();
         private readonly ItemBuilder NORMAL_ITEM = ItemBuilder.AnItem().AnyName();
         private readonly int DEFAULT_INITIAL_QUALITY = 10;
         private readonly int DEFAULT_INITIAL_SELLIN = 10;
@@ -176,6 +177,21 @@ namespace Tests
             qualityService.UpdateQuality();
 
             Assert.That(qualityService.Items.First().Quality, Is.EqualTo(initialQuality));
+        }
+
+        [Test]
+        public void UpdateQuality_ConjuredItem_DegradeInQualityTwiceAsFastAsNormalItems()
+        {
+            var qualityService = AnQualityService()
+                .AddItem(CONJURED_ITEM
+                    .SellIn(DEFAULT_INITIAL_SELLIN)
+                    .Quality(DEFAULT_INITIAL_QUALITY)
+                    .Build())
+                .Build();
+
+            qualityService.UpdateQuality();
+
+            Assert.That(qualityService.Items.First().Quality, Is.EqualTo(DEFAULT_INITIAL_QUALITY - 2));
         }
 
         private QualityServiceBuilder AnQualityService()

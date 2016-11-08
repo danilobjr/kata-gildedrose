@@ -36,6 +36,12 @@ namespace Tests.Builders
             return this;
         }
 
+        internal ItemBuilder NamedConjured()
+        {
+            this.name = "Conjured";
+            return this;
+        }
+
         internal ItemBuilder AnyName()
         {
             this.name = "Any name";

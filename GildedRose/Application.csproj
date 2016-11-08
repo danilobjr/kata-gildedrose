@@ -52,6 +52,8 @@
     <Compile Include="UpdateQualityAgedBrie.cs" />
     <Compile Include="UpdateQualityAnyItem.cs" />
     <Compile Include="UpdateQualityBackstage.cs" />
+    <Compile Include="UpdateQualityConjured.cs" />
+    <Compile Include="UpdateQualitySulfuras.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
